@@ -2,8 +2,6 @@ package xyz.dokup.todomvvm.di;
 
 import android.content.Context;
 
-import javax.inject.Singleton;
-
 import dagger.Module;
 import dagger.Provides;
 
@@ -24,9 +22,9 @@ public class AppModule {
         return context;
     }
 
-    @Singleton
-    @Provides
-    public OrmaDatabase provideOrmaDatabase(Context context) {
-        return OrmaDatabase.builder(context).build();
-    }
+//    @Singleton
+//    @Provides
+//    public OrmaDatabase provideOrmaDatabase(Context context) {
+//        return OrmaDatabase.builder(context).build();
+//    }
 }
