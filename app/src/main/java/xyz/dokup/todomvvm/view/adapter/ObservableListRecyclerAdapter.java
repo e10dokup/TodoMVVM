@@ -1,4 +1,4 @@
-package xyz.dokup.todomvvm.view.customview;
+package xyz.dokup.todomvvm.view.adapter;
 
 import android.content.Context;
 import android.databinding.ObservableList;
