@@ -1,6 +1,7 @@
 package xyz.dokup.todomvvm;
 
 import android.app.Application;
+import android.support.annotation.NonNull;
 
 import timber.log.Timber;
 import xyz.dokup.todomvvm.di.AppComponent;
@@ -14,6 +15,11 @@ import xyz.dokup.todomvvm.di.DaggerAppComponent;
 public class MyApplication extends Application {
 
     AppComponent component;
+
+    @NonNull
+    public AppComponent getComponent() {
+        return component;
+    }
 
     @Override
     public void onCreate() {

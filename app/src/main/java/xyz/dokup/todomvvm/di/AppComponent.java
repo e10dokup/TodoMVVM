@@ -14,4 +14,6 @@ import xyz.dokup.todomvvm.MyApplication;
 public interface AppComponent {
 
     void inject(MyApplication application);
+
+    ActivityComponent plus(ActivityModule module);
 }
