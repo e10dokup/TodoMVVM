@@ -1,6 +1,7 @@
 package xyz.dokup.todomvvm.view.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.databinding.ObservableList;
 import android.os.Bundle;
@@ -24,6 +25,10 @@ public class MainActivity extends BaseActivity {
     MainActivityViewModel viewModel;
 
     private ActivityMainBinding binding;
+
+    public static Intent createIntent(Context context) {
+        return new Intent(context, MainActivity.class);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">TodoMVVM</string>
     <string name="todo_list">ToDo List</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="deadline">Deadline eg. 20170505</string>
+    <string name="save">Save</string>
+    <string name="todo_create">Create ToDo</string>
 </resources>

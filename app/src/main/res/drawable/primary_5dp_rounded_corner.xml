@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--ボタンを独自レイアウトで書き直す-->
+    <item android:state_focused="true" android:state_enabled="true" android:state_pressed="false">
+        <!--ボタンがフォーカスされたときの設定-->
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+               android:shape="rectangle">
+            <solid android:color="@color/colorPrimary"/>
+            <corners android:radius="5dp"/>
+        </shape>
+    </item>
+    <item android:state_focused="true" android:state_enabled="false" android:state_pressed="false">
+        <!--ボタンが無効の時でフォーカスされた時の指定-->
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+               android:shape="rectangle">
+            <solid android:color="@color/grey_700"/>
+            <corners android:radius="5dp"/>
+        </shape>
+    </item>
+    <item android:state_focused="true" android:state_enabled="true" android:state_pressed="true">
+        <!--ボタンが押された時の指定-->
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+               android:shape="rectangle">
+            <solid android:color="@color/colorPrimaryDark"/>
+            <corners android:radius="5dp"/>
+        </shape>
+    </item>
+    <item android:state_enabled="false">
+        <!--ボタンが無効の時の指定-->
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+               android:shape="rectangle">
+            <solid android:color="@color/grey_700"/>
+            <corners android:radius="5dp"/>
+        </shape>
+    </item>
+    <item>
+        <!--ボタンが無効の時の指定-->
+        <shape xmlns:android="http://schemas.android.com/apk/res/android"
+               android:shape="rectangle">
+            <solid android:color="@color/colorPrimary"/>
+            <corners android:radius="5dp"/>
+        </shape>
+    </item>
+</selector>
