@@ -1,11 +1,29 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Color -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <!-- Toolbarのnavigation & overflow icon の色 -->
+        <item name="colorControlNormal">@color/white</item>
+
+        <!-- Widget default style -->
+        <item name="toolbarStyle">@style/TodoMvvm.Toolbar</item>
+    </style>
+
+    <style name="TodoMvvm.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="titleTextAppearance">@style/TextAppearance.AppCompat.Widget.ActionBar.Title.Inverse</item>
+        <item name="subtitleTextAppearance">@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle.Inverse</item>
+    </style>
+
+
+    <style name="MainEditTextStyle" parent="Base.Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/grey_600</item>
+        <item name="colorControlActivated">@color/colorPrimaryDark</item>
     </style>
 
 </resources>

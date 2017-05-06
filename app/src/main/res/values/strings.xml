@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TodoMVVM</string>
+    <string name="todo_list">ToDo List</string>
 </resources>
