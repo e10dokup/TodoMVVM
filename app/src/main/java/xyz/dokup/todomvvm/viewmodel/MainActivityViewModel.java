@@ -44,31 +44,12 @@ public class MainActivityViewModel extends ActivityViewModel {
     }
 
     @Override
-    public void onStart() {
+    public void onStart(Context context) {
 
     }
 
     @Override
-    public void onResume() {
-
-    }
-
-    @Override
-    public void onPause() {
-
-    }
-
-    @Override
-    public void onStop() {
-
-    }
-
-    public void onFabClick(View view) {
-        Timber.v("OnClickFab");
-        navigator.navigateToCreateTask();
-    }
-
-    public void start(Context context) {
+    public void onResume(Context context) {
         taskRepository.findAll()
                 .map(tasks -> Stream.of(tasks)
                         .sorted((o1, o2) -> (int)(o1.deadlineEpoch - o2.deadlineEpoch))
@@ -79,6 +60,21 @@ public class MainActivityViewModel extends ActivityViewModel {
                     this.taskViewModels.clear();
                     this.taskViewModels.addAll(taskViewModels1);
                 });
+    }
+
+    @Override
+    public void onPause(Context context) {
+
+    }
+
+    @Override
+    public void onStop(Context context) {
+
+    }
+
+    public void onFabClick(View view) {
+        Timber.v("OnClickFab");
+        navigator.navigateToCreateTask();
     }
 
     private List<TaskViewModel> convertToViewModel(Context context, List<Task> tasks) {

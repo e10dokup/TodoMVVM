@@ -41,28 +41,28 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         checkViewModel();
-        viewModel.onStart();
+        viewModel.onStart(this);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         checkViewModel();
-        viewModel.onResume();
+        viewModel.onResume(this);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
         checkViewModel();
-        viewModel.onPause();
+        viewModel.onPause(this);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
         checkViewModel();
-        viewModel.onStop();
+        viewModel.onStop(this);
     }
 
     private void checkViewModel() {

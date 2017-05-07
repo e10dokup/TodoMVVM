@@ -1,5 +1,6 @@
 package xyz.dokup.todomvvm.viewmodel;
 
+import android.content.Context;
 import android.databinding.ObservableField;
 import android.support.design.widget.Snackbar;
 import android.text.TextUtils;
@@ -42,22 +43,22 @@ public class CreateTaskActivityViewModel extends ActivityViewModel {
     }
 
     @Override
-    public void onStart() {
+    public void onStart(Context context) {
 
     }
 
     @Override
-    public void onResume() {
+    public void onResume(Context context) {
 
     }
 
     @Override
-    public void onPause() {
+    public void onPause(Context context) {
 
     }
 
     @Override
-    public void onStop() {
+    public void onStop(Context context) {
 
     }
 

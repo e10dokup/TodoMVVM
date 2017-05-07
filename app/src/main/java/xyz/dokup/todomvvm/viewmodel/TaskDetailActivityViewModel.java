@@ -1,5 +1,6 @@
 package xyz.dokup.todomvvm.viewmodel;
 
+import android.content.Context;
 import android.databinding.ObservableField;
 import android.support.design.widget.Snackbar;
 import android.view.View;
@@ -40,12 +41,12 @@ public class TaskDetailActivityViewModel extends ActivityViewModel {
     }
 
     @Override
-    public void onStart() {
+    public void onStart(Context context) {
 
     }
 
     @Override
-    public void onResume() {
+    public void onResume(Context context) {
         taskRepository.find(taskId)
                 .subscribe(task1 -> {
                     task.set(task1);
@@ -54,12 +55,12 @@ public class TaskDetailActivityViewModel extends ActivityViewModel {
     }
 
     @Override
-    public void onPause() {
+    public void onPause(Context context) {
 
     }
 
     @Override
-    public void onStop() {
+    public void onStop(Context context) {
 
     }
 

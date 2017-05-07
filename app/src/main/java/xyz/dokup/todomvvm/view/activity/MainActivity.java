@@ -46,8 +46,6 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
-
-        viewModel.start(this);
     }
 
     private void initRecyclerView() {
