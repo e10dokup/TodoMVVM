@@ -6,7 +6,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
-import xyz.dokup.todomvvm.model.OrmaDatabase;
+import xyz.dokup.todomvvm.entity.OrmaDatabase;
 
 /**
  * Created by e10dokup on 2017/05/06.

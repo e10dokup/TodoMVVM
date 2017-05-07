@@ -5,7 +5,7 @@ import android.databinding.ObservableField;
 import android.view.View;
 
 import timber.log.Timber;
-import xyz.dokup.todomvvm.model.Task;
+import xyz.dokup.todomvvm.entity.Task;
 import xyz.dokup.todomvvm.util.TaskUtil;
 import xyz.dokup.todomvvm.view.helper.Navigator;
 

@@ -14,7 +14,7 @@ import javax.inject.Inject;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import timber.log.Timber;
-import xyz.dokup.todomvvm.model.Task;
+import xyz.dokup.todomvvm.entity.Task;
 import xyz.dokup.todomvvm.repository.TaskRepository;
 import xyz.dokup.todomvvm.view.helper.Navigator;
 import xyz.dokup.todomvvm.viewmodel.base.ActivityViewModel;
