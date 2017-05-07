@@ -10,7 +10,7 @@ import io.reactivex.Completable;
 import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
-import xyz.dokup.todomvvm.datasource.TaskDataSource;
+import xyz.dokup.todomvvm.datasource.TaskLocalDataSource;
 import xyz.dokup.todomvvm.model.OrmaDatabase;
 import xyz.dokup.todomvvm.model.Task;
 
@@ -18,7 +18,7 @@ import xyz.dokup.todomvvm.model.Task;
  * Created by e10dokup on 2017/05/06.
  */
 
-public class TaskRepository implements TaskDataSource {
+public class TaskRepository implements TaskLocalDataSource {
 
     private final OrmaDatabase ormaDatabase;
 

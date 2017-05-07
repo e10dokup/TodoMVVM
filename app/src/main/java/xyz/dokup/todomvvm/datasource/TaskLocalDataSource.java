@@ -12,7 +12,7 @@ import xyz.dokup.todomvvm.model.Task;
  * Created by e10dokup on 2017/05/06.
  */
 
-public interface TaskDataSource {
+public interface TaskLocalDataSource {
 
     Single<List<Task>> findAll();
 
