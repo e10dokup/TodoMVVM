@@ -1,4 +1,4 @@
-package xyz.dokup.todomvvm.entity;
+package xyz.dokup.todomvvm.model;
 
 import com.github.gfx.android.orma.annotation.Column;
 import com.github.gfx.android.orma.annotation.PrimaryKey;

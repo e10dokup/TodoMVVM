@@ -11,8 +11,8 @@ import io.reactivex.Single;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import xyz.dokup.todomvvm.datasource.TaskLocalDataSource;
-import xyz.dokup.todomvvm.entity.OrmaDatabase;
-import xyz.dokup.todomvvm.entity.Task;
+import xyz.dokup.todomvvm.model.OrmaDatabase;
+import xyz.dokup.todomvvm.model.Task;
 
 /**
  * Created by e10dokup on 2017/05/06.
