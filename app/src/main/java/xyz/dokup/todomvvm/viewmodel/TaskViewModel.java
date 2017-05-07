@@ -1,6 +1,5 @@
 package xyz.dokup.todomvvm.viewmodel;
 
-import android.content.Context;
 import android.databinding.ObservableField;
 import android.view.View;
 
@@ -20,7 +19,7 @@ public class TaskViewModel {
     public ObservableField<Task> task;
     public ObservableField<String> deadline;
 
-    public TaskViewModel(Context context, Navigator navigator, ObservableField<Task> task) {
+    public TaskViewModel(Navigator navigator, ObservableField<Task> task) {
         this.navigator = navigator;
         this.task = task;
         deadline = new ObservableField<>();

@@ -43,22 +43,22 @@ public class CreateTaskActivityViewModel extends ActivityViewModel {
     }
 
     @Override
-    public void onStart(Context context) {
+    public void onStart() {
 
     }
 
     @Override
-    public void onResume(Context context) {
+    public void onResume() {
 
     }
 
     @Override
-    public void onPause(Context context) {
+    public void onPause() {
 
     }
 
     @Override
-    public void onStop(Context context) {
+    public void onStop() {
 
     }
 

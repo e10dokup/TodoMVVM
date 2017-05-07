@@ -41,12 +41,12 @@ public class TaskDetailActivityViewModel extends ActivityViewModel {
     }
 
     @Override
-    public void onStart(Context context) {
+    public void onStart() {
 
     }
 
     @Override
-    public void onResume(Context context) {
+    public void onResume() {
         taskRepository.find(taskId)
                 .subscribe(task1 -> {
                     task.set(task1);
@@ -55,12 +55,12 @@ public class TaskDetailActivityViewModel extends ActivityViewModel {
     }
 
     @Override
-    public void onPause(Context context) {
+    public void onPause() {
 
     }
 
     @Override
-    public void onStop(Context context) {
+    public void onStop() {
 
     }
 

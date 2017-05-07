@@ -44,17 +44,17 @@ public class MainActivityViewModel extends ActivityViewModel {
     }
 
     @Override
-    public void onStart(Context context) {
+    public void onStart() {
 
     }
 
     @Override
-    public void onResume(Context context) {
+    public void onResume() {
         taskRepository.findAll()
                 .map(tasks -> Stream.of(tasks)
                         .sorted((o1, o2) -> (int)(o1.deadlineEpoch - o2.deadlineEpoch))
                         .toList())
-                .map(tasks -> convertToViewModel(context, tasks))
+                .map(tasks -> convertToViewModel(tasks))
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(taskViewModels1 -> {
                     this.taskViewModels.clear();
@@ -63,12 +63,12 @@ public class MainActivityViewModel extends ActivityViewModel {
     }
 
     @Override
-    public void onPause(Context context) {
+    public void onPause() {
 
     }
 
     @Override
-    public void onStop(Context context) {
+    public void onStop() {
 
     }
 
@@ -77,8 +77,8 @@ public class MainActivityViewModel extends ActivityViewModel {
         navigator.navigateToCreateTask();
     }
 
-    private List<TaskViewModel> convertToViewModel(Context context, List<Task> tasks) {
-        return Stream.of(tasks).map(task -> new TaskViewModel(context, navigator, new ObservableField<>(task))).toList();
+    private List<TaskViewModel> convertToViewModel( List<Task> tasks) {
+        return Stream.of(tasks).map(task -> new TaskViewModel(navigator, new ObservableField<>(task))).toList();
     }
 
 }
