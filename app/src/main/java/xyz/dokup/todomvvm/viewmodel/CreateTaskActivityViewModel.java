@@ -8,6 +8,10 @@ import android.view.View;
 import javax.inject.Inject;
 
 import timber.log.Timber;
+import xyz.dokup.todomvvm.model.Task;
+import xyz.dokup.todomvvm.repository.TaskRepository;
+import xyz.dokup.todomvvm.util.TaskUtil;
+import xyz.dokup.todomvvm.view.helper.Navigator;
 import xyz.dokup.todomvvm.viewmodel.base.ActivityViewModel;
 
 /**
@@ -16,14 +20,20 @@ import xyz.dokup.todomvvm.viewmodel.base.ActivityViewModel;
 
 public class CreateTaskActivityViewModel extends ActivityViewModel {
 
-    private ObservableField<String> title;
-    private ObservableField<String> description;
-    private ObservableField<String> deadline;
+    private final Navigator navigator;
+    private final TaskRepository taskRepository;
+
+    public ObservableField<String> title;
+    public ObservableField<String> description;
+    public ObservableField<String> deadline;
 
     private boolean enabled;
 
     @Inject
-    public CreateTaskActivityViewModel() {
+    public CreateTaskActivityViewModel(Navigator navigator, TaskRepository taskRepository) {
+        this.navigator = navigator;
+        this.taskRepository = taskRepository;
+
         this.title = new ObservableField<>();
         this.description = new ObservableField<>();
         this.deadline = new ObservableField<>();
@@ -57,7 +67,12 @@ public class CreateTaskActivityViewModel extends ActivityViewModel {
         if (!enabled) {
             Snackbar.make(view, "Fill out all values!", Snackbar.LENGTH_SHORT).show();
         } else {
-
+            Task task = new Task(title.get(), description.get(), TaskUtil.parseDeadline(deadline.get()));
+            taskRepository.save(task)
+                    .subscribe(() -> {
+                        Snackbar.make(view, "Complete save task!", Snackbar.LENGTH_SHORT).show();
+                        navigator.closeActivity();
+                    });
         }
     }
 

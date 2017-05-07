@@ -19,7 +19,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:title="@string/todo_create"
-            app:onNavigationClick="@{viewModel::onNavigationClick}"
             app:popupTheme="@style/TodoMvvm.Toolbar"
             android:elevation="4dp" />
 
@@ -67,6 +66,8 @@
                         android:layout_height="wrap_content"
                         android:text="@={viewModel.description}"
                         android:hint="@string/description"
+                        android:minLines="5"
+                        android:gravity="top"
                         android:onTextChanged="@{viewModel::onTextChanged}"
                         app:theme="@style/MainEditTextStyle"/>
 
@@ -87,6 +88,7 @@
                         android:layout_height="wrap_content"
                         android:text="@={viewModel.deadline}"
                         android:hint="@string/deadline"
+                        android:inputType="number"
                         android:onTextChanged="@{viewModel::onTextChanged}"
                         app:theme="@style/MainEditTextStyle"/>
 
@@ -100,7 +102,8 @@
                     android:layout_marginEnd="@dimen/margin_medium"
                     android:background="@drawable/primary_5dp_rounded_corner"
                     android:text="@string/save"
-                    android:onClick="@{viewModel::onSaveClick}"/>
+                    android:onClick="@{viewModel::onSaveClick}"
+                    android:layout_marginBottom="@dimen/margin_medium"/>
 
             </LinearLayout>
 

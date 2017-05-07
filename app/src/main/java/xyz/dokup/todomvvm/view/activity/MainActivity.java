@@ -43,6 +43,13 @@ public class MainActivity extends BaseActivity {
         initRecyclerView();
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        viewModel.start(this);
+    }
+
     private void initRecyclerView() {
         TaskAdapter adapter = new TaskAdapter(this, viewModel.getTaskViewModels());
         binding.taskRecycler.setAdapter(adapter);
@@ -55,7 +62,6 @@ public class MainActivity extends BaseActivity {
 
         public TaskAdapter(Context context, ObservableList<TaskViewModel>list) {
             super(context, list);
-            setHasStableIds(true);
         }
 
         @Override
@@ -68,7 +74,6 @@ public class MainActivity extends BaseActivity {
             TaskViewModel viewModel = getItem(position);
             ItemTaskBinding binding = holder.binding;
             binding.setViewModel(viewModel);
-            binding.executePendingBindings();
         }
 
         @Override

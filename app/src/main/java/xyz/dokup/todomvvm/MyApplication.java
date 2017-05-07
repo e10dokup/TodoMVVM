@@ -3,6 +3,8 @@ package xyz.dokup.todomvvm;
 import android.app.Application;
 import android.support.annotation.NonNull;
 
+import com.jakewharton.threetenabp.AndroidThreeTen;
+
 import timber.log.Timber;
 import xyz.dokup.todomvvm.di.AppComponent;
 import xyz.dokup.todomvvm.di.AppModule;
@@ -29,6 +31,8 @@ public class MyApplication extends Application {
                 .appModule(new AppModule(this))
                 .build();
         component.inject(this);
+
+        AndroidThreeTen.init(this);
 
         Timber.plant(new Timber.DebugTree());
     }

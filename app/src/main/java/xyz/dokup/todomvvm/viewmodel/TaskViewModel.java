@@ -13,11 +13,14 @@ import xyz.dokup.todomvvm.model.Task;
 
 public class TaskViewModel {
 
+
+
     public ObservableField<Task> task;
     public ObservableField<String> deadline;
 
     public TaskViewModel(Context context, ObservableField<Task> task) {
         this.task = task;
+        deadline = new ObservableField<>();
         deadline.set("hoge");
     }
 
@@ -32,5 +35,6 @@ public class TaskViewModel {
 
     public void onItemClick(View view) {
         Timber.v("onClick");
+
     }
 }
