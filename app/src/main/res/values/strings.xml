@@ -6,4 +6,6 @@
     <string name="deadline">Deadline eg. 20170505</string>
     <string name="save">Save</string>
     <string name="todo_create">Create ToDo</string>
+    <string name="todo_detail">ToDo detail</string>
+    <string name="delete">Delete</string>
 </resources>

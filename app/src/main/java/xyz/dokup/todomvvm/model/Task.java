@@ -20,14 +20,14 @@ public class Task {
     public String description;
 
     @Column
-    public long deadlineMillis;
+    public long deadlineEpoch;
 
     public Task() {
     }
 
-    public Task(String title, String description, long deadlineMillis) {
+    public Task(String title, String description, long deadlineEpoch) {
         this.title = title;
         this.description = description;
-        this.deadlineMillis = deadlineMillis;
+        this.deadlineEpoch = deadlineEpoch;
     }
 }

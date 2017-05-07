@@ -38,6 +38,18 @@ public class TaskRepository implements TaskDataSource {
     }
 
     @Override
+    public Single<Task> find(@NonNull int id) {
+        return ormaDatabase.relationOfTask()
+                .selector()
+                .idEq(id)
+                .limit(1)
+                .executeAsObservable()
+                .firstOrError()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread());
+    }
+
+    @Override
     public Completable save(@NonNull Task task) {
         return ormaDatabase.transactionAsCompletable(() -> ormaDatabase.relationOfTask().inserter().execute(task))
                 .subscribeOn(Schedulers.io())
@@ -51,7 +63,7 @@ public class TaskRepository implements TaskDataSource {
                 .idEq(task.id)
                 .title(task.title)
                 .description(task.description)
-                .deadlineMillis(task.deadlineMillis)
+                .deadlineEpoch(task.deadlineEpoch)
                 .executeAsSingle()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());

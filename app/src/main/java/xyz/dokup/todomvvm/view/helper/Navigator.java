@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import xyz.dokup.todomvvm.di.scope.ActivityScope;
 import xyz.dokup.todomvvm.view.activity.CreateTaskActivity;
+import xyz.dokup.todomvvm.view.activity.TaskDetailActivity;
 
 /**
  * Created by e10dokup on 2017/05/07.
@@ -23,6 +24,10 @@ public class Navigator {
 
     public void navigateToCreateTask() {
         activity.startActivity(CreateTaskActivity.createIntent(activity));
+    }
+
+    public void navigateToTaskDetail(int taskId) {
+        activity.startActivity(TaskDetailActivity.createIntent(activity, taskId));
     }
 
     public void closeActivity() {

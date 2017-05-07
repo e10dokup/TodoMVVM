@@ -16,6 +16,8 @@ public interface TaskDataSource {
 
     Single<List<Task>> findAll();
 
+    Single<Task> find(@NonNull int id);
+
     Completable save(@NonNull Task task);
 
     Single<Integer> update(@NonNull Task task);

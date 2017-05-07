@@ -71,7 +71,7 @@ public class MainActivityViewModel extends ActivityViewModel {
     public void start(Context context) {
         taskRepository.findAll()
                 .map(tasks -> Stream.of(tasks)
-                        .sorted((o1, o2) -> (int)(o1.deadlineMillis - o2.deadlineMillis))
+                        .sorted((o1, o2) -> (int)(o1.deadlineEpoch - o2.deadlineEpoch))
                         .toList())
                 .map(tasks -> convertToViewModel(context, tasks))
                 .observeOn(AndroidSchedulers.mainThread())
@@ -82,7 +82,7 @@ public class MainActivityViewModel extends ActivityViewModel {
     }
 
     private List<TaskViewModel> convertToViewModel(Context context, List<Task> tasks) {
-        return Stream.of(tasks).map(task -> new TaskViewModel(context, new ObservableField<>(task))).toList();
+        return Stream.of(tasks).map(task -> new TaskViewModel(context, navigator, new ObservableField<>(task))).toList();
     }
 
 }
